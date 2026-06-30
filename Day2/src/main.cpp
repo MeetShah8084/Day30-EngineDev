@@ -1,6 +1,5 @@
-// #include<iostream>
+ #include<iostream>
 #include<book.hpp>
-#include<iostream>
 #include<memory>
 
 

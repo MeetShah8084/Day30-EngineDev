@@ -1,13 +1,23 @@
 #ifndef __book__hpp
     #define __book__hpp
 
+#ifdef _WIN32
+    #ifdef librarySystem_EXPORTS
+        #define LIBRARY_EXPORT __declspec(dllexport)
+    #else
+        #define LIBRARY_EXPORT __declspec(dllimport)   
+    #endif
+#else
+    #define LIBRARY_EXPORT
+#endif
+
         #include<string>
         #include<memory>
         #include<vector>
 
-        class Library;
+        class LIBRARY_EXPORT Library;
 
-            class Book{
+            class LIBRARY_EXPORT Book{
                 friend class Library;
 
                 private:
@@ -24,10 +34,10 @@
 
                     Book(const Book& other);
 
-                    Book(Book&& other);
+                    Book(Book&& other) noexcept;
 
                     Book& operator=(const Book& other);
-                    Book& operator=(Book&& other);
+                    Book& operator=(Book&& other) noexcept;
 
                     ~Book(){
                         counter-=1;
@@ -40,10 +50,7 @@
             };
 
 
-            class Library{
-                private:
-                    std::vector<std::unique_ptr<Book>> books;
-                
+            class LIBRARY_EXPORT Library{               
                 public:
                     std::vector<std::shared_ptr<Book>> lendable;
                     std::weak_ptr<Book> lendBook(const std::string& name);
@@ -53,7 +60,7 @@
                     
             };
 
-            class Reader{
+            class LIBRARY_EXPORT Reader{
                 private:
                     std::weak_ptr<Book> brwBook;
                     std::string name;

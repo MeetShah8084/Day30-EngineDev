@@ -18,7 +18,7 @@ Book::Book(const Book& other){
     this->count = other.count;
 }
 
-Book::Book(Book&& other){
+Book::Book(Book&& other) noexcept{
     if(this == &other) return;
     this->name = std::move(other.name);
     this->author = std::move(other.author);
@@ -39,7 +39,7 @@ Book& Book::operator=(const Book& other){
     return *this;
 }
 
-Book& Book::operator=(Book&& other){
+Book& Book::operator=(Book&& other) noexcept{
 
     if(this == &other) return *this;
 
