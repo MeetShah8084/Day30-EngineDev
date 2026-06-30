@@ -1,4 +1,9 @@
-Day1/build/
 .vscode
 Day1/.cache/
 Day1/out/
+Day2/out/
+Day2/.cache/
+Day2/.vscode/
+Day2/CMakeFiles
+Day2/CMakeCache.txt
+Day2/compile_commands.json
