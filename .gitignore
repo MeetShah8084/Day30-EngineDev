@@ -1,6 +1,7 @@
 .vscode
 Day1/.cache/
 Day1/out/
+
 Day2/out/
 Day2/.cache/
 Day2/.vscode/
@@ -9,3 +10,9 @@ Day2/CMakeCache.txt
 Day2/compile_commands.json
 .vs/
 Day2/.vs/
+
+Day3/out/
+Day3/.cache/
+Day3/.vscode/
+Day3/.vs/
+Day3/compile_commands.json
