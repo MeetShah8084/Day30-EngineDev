@@ -2,17 +2,22 @@
 #include<memory>
 #include<iostream>
 
-Node::Node(){}
+Node::Node(){
+    std::cout << "Node created!" << std::endl;
+}
 
 Node::Node(const int& _data){
+    std::cout << "Created: " << _data << std::endl;
     this->data = _data;
 }
 
 Node::Node(const Node& obj){
+    std::cout << "Copied: " << obj.data << std::endl;
     this->data = obj.data;
 }
 
 Node::~Node(){
+    std::cout << "[[Node]] " << this->data << " deleted" << std::endl;
     prev = nullptr;
 }
 
