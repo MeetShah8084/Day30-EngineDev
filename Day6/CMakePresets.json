@@ -1,0 +1,74 @@
+{
+    "version":3,
+    "cmakeMinimumRequired": {
+        "major":3,
+        "minor":30,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name":"base",
+            "generator": "Ninja",
+            "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "hidden": true
+        },
+        {
+            "name":"windows-debug",
+            "inherits":["base"],
+            "condition":{
+                "lhs": "Windows",
+                "rhs":"${hostSystemName}",
+                "type": "equals"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE":"Debug",
+                "CMAKE_C_COMPILER":"cl",
+                "CMAKE_CXX_COMPILER":"cl"
+            }
+        },
+        {
+            "name":"windows-release",
+            "inherits":["base"],
+            "condition":{
+                "lhs": "Windows",
+                "rhs":"${hostSystemName}",
+                "type": "equals"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE":"Release",
+                "CMAKE_C_COMPILER":"cl",
+                "CMAKE_CXX_COMPILER":"cl"
+            }
+        },
+        {
+            "name":"linux-release",
+            "inherits":["base"],
+            "condition":{
+                "lhs": "Linux",
+                "rhs":"${hostSystemName}",
+                "type": "equals"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE":"Release",
+                "CMAKE_C_COMPILER":"gcc",
+                "CMAKE_CXX_COMPILER":"g++"
+            }
+        },
+        {
+            "name":"linux-debug",
+            "inherits":["base"],
+            "condition":{
+                "lhs": "Linux",
+                "rhs":"${hostSystemName}",
+                "type": "equals"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE":"Debug",
+                "CMAKE_C_COMPILER":"gcc",
+                "CMAKE_CXX_COMPILER":"g++"
+            }
+        }
+
+    ]
+}
