@@ -18,7 +18,9 @@
 - 100_days Japanese (concurrently learning with C++, just learned the vowels in Hiragana with writing)
 - I'm gonna start learning DSA next year around June 2027
 
-# Resources
+# Resources:-
+- roadmap.sh
+- Code with Mike tutorials
 
 # Contact me:
 -  [Youtube](https://www.youtube.com/@InsocialDev)
