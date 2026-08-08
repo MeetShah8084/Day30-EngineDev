@@ -34,3 +34,4 @@
 - `Day 4`:- Learnt in-depth about RTTI, virtual functions and how it all works under the hood (GNU Clang implementation)
 - `Day 5`:- Learnt Rule of 0,3,5 and RAII | Started Learning Japanese Hiragana
 - `Day 6`:- Friend functions and explicit ctor
+- `Day 7` :- Casting (static_cast and dynamic_cast, auto)
